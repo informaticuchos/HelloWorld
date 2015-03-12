@@ -4,41 +4,29 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
-import android.widget.Button;
-import android.view.View;
-import android.widget.EditText;
+import android.widget.TextView;
 
 
-public class HelloWorldActivity extends ActionBarActivity {
+public class Segunda extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hello_world);
-
-        Button cargar = (Button) findViewById(R.id.buttonEnviar);
-
-        cargar.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                EditText cajaTexto = (EditText) findViewById(R.id.editText);
-                String texto = cajaTexto.getText().toString();
-                Intent i=new Intent(HelloWorldActivity.this, Segunda.class);
-                i.putExtra("cajaTexto",texto);
-                startActivity(i);
-
-            }
-        });
+        setContentView(R.layout.activity_segunda);
+        Bundle extras = getIntent().getExtras();
+        //Obtenemos datos enviados desde la primera actividad
+        if (extras != null) {
+            TextView textoLabel = (TextView) findViewById(R.id.textoID);
+            String texto = extras.getString("cajaTexto");
+            textoLabel.setText(texto);
+        }
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_hello_world, menu);
+        getMenuInflater().inflate(R.menu.menu_segunda, menu);
         return true;
     }
 
