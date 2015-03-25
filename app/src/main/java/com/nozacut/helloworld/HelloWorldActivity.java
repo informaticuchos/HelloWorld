@@ -25,6 +25,8 @@ public class HelloWorldActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+
+
                 EditText cajaTexto = (EditText) findViewById(R.id.editText);
                 String texto = cajaTexto.getText().toString();
                 Intent i=new Intent(HelloWorldActivity.this, Segunda.class);
