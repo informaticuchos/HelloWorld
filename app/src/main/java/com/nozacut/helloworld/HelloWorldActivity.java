@@ -17,6 +17,7 @@ public class HelloWorldActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hello_world);
 
+        //Adri <3
         Button cargar = (Button) findViewById(R.id.buttonEnviar);
 
         cargar.setOnClickListener(new View.OnClickListener() {
