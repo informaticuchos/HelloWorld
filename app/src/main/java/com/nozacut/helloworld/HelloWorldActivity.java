@@ -16,8 +16,7 @@ public class HelloWorldActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hello_world);
-
-        //Adri <3 galan
+        
         Button cargar = (Button) findViewById(R.id.buttonEnviar);
 
         cargar.setOnClickListener(new View.OnClickListener() {
@@ -25,7 +24,6 @@ public class HelloWorldActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-
 
                 EditText cajaTexto = (EditText) findViewById(R.id.editText);
                 String texto = cajaTexto.getText().toString();
